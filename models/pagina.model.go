@@ -17,7 +17,7 @@ func (p *Page) Save() error {
 }
 
 func LoadPage(title string) (*Page, error) {
-	filename := title + ".txt"
+	filename := fmt.Sprintf("pages/%v.txt", title)
 
 	if body, erro := os.ReadFile(filename); erro != nil {
 		return nil, erro
